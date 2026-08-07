@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Library</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>AI Prompt Library</h1>
+        <p>Save and organize your favorite AI prompts.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+            
+        <!-- Toolbar -->
+        <section class="toolbar">
+
+            <div class="search-container">
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search prompts..."
+                >
+            </div>
+
+            <div class="add-prompt-container">
+                <button id="addPromptBtn">
+                    + Add Prompt
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Category Filters -->
+        <section class="categories">
+
+            <button class="active" data-category="all">All</button>
+            <button data-category="Programming">Programming</button>
+            <button data-category="Writing">Writing</button>
+            <button data-category="Marketing">Marketing</button>
+            <button data-category="Design">Design</button>
+
+        </section>
+
+        <!-- Prompt Cards will be added here by JavaScript -->
+        <section
+            class="prompt-container"
+            id="promptContainer">
+        </section>
+
+    </main>
+
+    <!-- Add Prompt Modal -->
+    <div class="modal hidden">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>Add New Prompt</h2>
+
+                <button class="close-btn">
+                    &times;
+                </button>
+
+            </div>
+
+            <form>
+
+                <div class="form-group">
+
+                    <label for="title">
+                        Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="Enter prompt title"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <select id="category">
+
+                        <option value="Programming">Programming</option>
+                        <option value="Writing">Writing</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Design">Design</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="prompt">
+                        Prompt
+                    </label>
+
+                    <textarea
+                        id="prompt"
+                        rows="8"
+                        placeholder="Write your AI prompt..."
+                    ></textarea>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="tags">
+                        Tags
+                    </label>
+
+                    <input
+                        type="text"
+                        id="tags"
+                        placeholder="Type tags separated by commas"
+                    >
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        id="cancelBtn">
+                        Cancel
+                    </button>
+
+                    <button type="submit">
+                        Save Prompt
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
