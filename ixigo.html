@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ixigo - Book Flights, Trains, Hotels & Buses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ===== RESET ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ==============================
+       TOP ANNOUNCEMENT BAR
+    ============================== */
+    .top-bar {
+      background-color: #fff3e0;
+      text-align: center;
+      padding: 8px;
+      font-size: 13px;
+      color: #555;
+      border-bottom: 1px solid #ffe0b2;
+    }
+
+    .top-bar span {
+      color: #e87722;
+      font-weight: 600;
+    }
+
+    /* ==============================
+       NAVBAR
+    ============================== */
+    .navbar {
+      background-color: #ffffff;
+      border-bottom: 1px solid #eee;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    /* ixigo logo text */
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      color: #e87722;
+      letter-spacing: -1px;
+    }
+
+    .logo span { color: #333; }
+
+    /* nav tabs: Flights, Hotels, Trains, Buses */
+    .nav-tabs {
+      display: flex;
+      gap: 4px;
+    }
+
+    .nav-tab {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #555;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .nav-tab:hover { background-color: #f5f5f5; }
+
+    .nav-tab.active {
+      background-color: #fff3e0;
+      color: #e87722;
+      font-weight: 600;
+    }
+
+    .tab-icon { font-size: 16px; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .nav-right a:hover { color: #e87722; }
+
+    .login-btn {
+      background-color: #e87722;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .login-btn:hover { background-color: #d4691a; }
+
+
+    /* ==============================
+       HERO SECTION  (orange gradient bg)
+    ============================== */
+    .hero {
+      background: linear-gradient(135deg, #ff8c00 0%, #e87722 40%, #ffb347 100%);
+      padding: 40px 40px 80px;
+      position: relative;
+    }
+
+    .hero-title {
+      text-align: center;
+      color: white;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 28px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    }
+
+
+    /* ==============================
+       SEARCH BOX (white card)
+    ============================== */
+    .search-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 32px;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    }
+
+    /* One Way / Round Trip radio row */
+    .trip-type {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .trip-type label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      color: #444;
+    }
+
+    .trip-type input[type="radio"] {
+      accent-color: #e87722;
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Search fields row */
+    .search-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr auto;
+      gap: 12px;
+      align-items: end;
+    }
+
+    .field-box {
+      border: 1.5px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .field-box:hover { border-color: #e87722; }
+
+    .field-label {
+      font-size: 11px;
+      color: #999;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .field-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: #222;
+      margin-top: 2px;
+    }
+
+    .field-sub {
+      font-size: 11px;
+      color: #888;
+      margin-top: 1px;
+    }
+
+    /* Swap icon between From / To */
+    .swap-btn {
+      position: relative;
+    }
+
+    .swap-icon {
+      position: absolute;
+      right: -18px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 2;
+      color: #e87722;
+    }
+
+    /* Search button */
+    .search-btn {
+      background-color: #e87722;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 32px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .search-btn:hover { background-color: #d4691a; }
+
+    /* Special fares row */
+    .special-fares {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .special-fares strong { color: #333; }
+
+    .fare-tag {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #f5f5f5;
+      border-radius: 20px;
+      padding: 5px 12px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .fare-tag:hover { background: #ffe0b2; }
+
+
+    /* ==============================
+       PERKS STRIP  (below hero)
+    ============================== */
+    .perks-strip {
+      background: #fff8f0;
+      border-bottom: 1px solid #ffe0b2;
+      padding: 14px 40px;
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+    }
+
+    .perk-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .perk-icon { font-size: 18px; }
+
+
+    /* ==============================
+       SECTION WRAPPER
+    ============================== */
+    .section {
+      padding: 36px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+
+    /* ==============================
+       DO MORE WITH IXIGO  (icon grid)
+    ============================== */
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+
+    .quick-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 18px 10px;
+      border-radius: 14px;
+      border: 1.5px solid #eee;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .quick-link:hover {
+      border-color: #e87722;
+      background: #fff8f0;
+      transform: translateY(-2px);
+    }
+
+    .quick-link-icon {
+      font-size: 28px;
+      background: #fff3e0;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quick-link-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .quick-link-tag {
+      font-size: 10px;
+      background: #e87722;
+      color: white;
+      padding: 2px 7px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+
+    /* ==============================
+       OFFERS CARDS ROW
+    ============================== */
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .offer-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1.5px solid #eee;
+      cursor: pointer;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .offer-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+    }
+
+    .offer-img {
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+
+    /* Different colors for each offer card */
+    .offer-img.blue   { background: linear-gradient(135deg, #1565c0, #42a5f5); }
+    .offer-img.green  { background: linear-gradient(135deg, #2e7d32, #66bb6a); }
+    .offer-img.purple { background: linear-gradient(135deg, #6a1b9a, #ab47bc); }
+    .offer-img.orange { background: linear-gradient(135deg, #e65100, #ffa726); }
+
+    .offer-body {
+      padding: 12px 14px;
+    }
+
+    .offer-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 4px;
+    }
+
+    .offer-desc {
+      font-size: 11px;
+      color: #888;
+    }
+
+    .offer-code {
+      display: inline-block;
+      margin-top: 8px;
+      background: #fff3e0;
+      color: #e87722;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+      border: 1px dashed #e87722;
+    }
+
+
+    /* ==============================
+       POPULAR ROUTES  (table-style)
+    ============================== */
+    .routes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .route-group {
+      padding: 18px 20px;
+      border-right: 1px solid #eee;
+    }
+
+    .route-group:last-child { border-right: none; }
+
+    .route-from {
+      font-size: 14px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .route-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .route-link {
+      font-size: 12px;
+      color: #e87722;
+      background: #fff3e0;
+      padding: 4px 10px;
+      border-radius: 16px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .route-link:hover { background: #ffe0b2; }
+
+
+    /* ==============================
+       NEWS / TRAVEL STORIES
+    ============================== */
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .story-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1.5px solid #eee;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+
+    .story-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+
+    .story-img {
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+
+    .story-img.sky    { background: linear-gradient(135deg, #0288d1, #81d4fa); }
+    .story-img.green  { background: linear-gradient(135deg, #388e3c, #a5d6a7); }
+    .story-img.golden { background: linear-gradient(135deg, #f57f17, #fff176); }
+
+    .story-body { padding: 14px; }
+
+    .story-tag {
+      font-size: 10px;
+      background: #e87722;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .story-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #222;
+      line-height: 1.5;
+    }
+
+
+    /* ==============================
+       APP DOWNLOAD BANNER
+    ============================== */
+    .app-banner {
+      background: linear-gradient(135deg, #e87722, #ff6f00);
+      margin: 0 40px 40px;
+      border-radius: 16px;
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .app-banner-left h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .app-banner-left p {
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .app-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .app-btn {
+      background: black;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .app-btn:hover { background: #222; }
+
+    .app-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: white;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .stars { color: #ffd700; font-size: 16px; }
+
+    .app-phone {
+      font-size: 90px;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.2));
+    }
+
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    .footer {
+      background: #1a1a1a;
+      color: #aaa;
+      padding: 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto 30px;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #e87722;
+      margin-bottom: 12px;
+    }
+
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #888;
+    }
+
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ddd;
+      margin-bottom: 14px;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col ul li {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .footer-col ul li:hover { color: #e87722; }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .social-icon {
+      width: 34px;
+      height: 34px;
+      background: #333;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .social-icon:hover { background: #e87722; }
+
+    /* divider */
+    .divider {
+      border: none;
+      border-top: 1px solid #f0f0f0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="top-bar">
+    🎉 Get up to <span>25% OFF</span> on your first app booking! Use code: <span>GETAPP</span>
+  </div>
+
+
+  <!-- =====================
+       NAVBAR
+  ===================== -->
+  <nav class="navbar">
+
+    <div class="nav-left">
+      <!-- Logo -->
+      <div class="logo">ixigo</div>
+
+      <!-- Tabs -->
+      <div class="nav-tabs">
+        <div class="nav-tab active">
+          <span class="tab-icon">✈️</span> Flights
+        </div>
+        <div class="nav-tab">
+          <span class="tab-icon">🏨</span> Hotels
+        </div>
+        <div class="nav-tab">
+          <span class="tab-icon">🚂</span> Trains
+        </div>
+        <div class="nav-tab">
+          <span class="tab-icon">🚌</span> Buses
+        </div>
+        <div class="nav-tab">
+          <span class="tab-icon">▼</span> More
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <a href="#">Offers</a>
+      <a href="#">Customer Service</a>
+      <div class="login-btn">Login / Sign Up</div>
+    </div>
+
+  </nav>
+
+
+  <!-- =====================
+       HERO + SEARCH BOX
+  ===================== -->
+  <div class="hero">
+    <h1 class="hero-title">Book International and Domestic Flights ✈️</h1>
+
+    <div class="search-card">
+
+      <!-- Trip type radio -->
+      <div class="trip-type">
+        <label>
+          <input type="radio" name="trip" checked/> One Way
+        </label>
+        <label>
+          <input type="radio" name="trip"/> Round Trip
+        </label>
+        <label>
+          <input type="radio" name="trip"/> Multi City
+        </label>
+      </div>
+
+      <!-- Search fields -->
+      <div class="search-fields">
+
+        <!-- FROM -->
+        <div class="field-box swap-btn" style="position:relative;">
+          <div class="field-label">From</div>
+          <div class="field-value">Mumbai</div>
+          <div class="field-sub">BOM — Chhatrapati Shivaji</div>
+          <!-- swap button -->
+          <div class="swap-icon">⇄</div>
+        </div>
+
+        <!-- TO -->
+        <div class="field-box">
+          <div class="field-label">To</div>
+          <div class="field-value">Delhi</div>
+          <div class="field-sub">DEL — Indira Gandhi Intl</div>
+        </div>
+
+        <!-- DEPARTURE -->
+        <div class="field-box">
+          <div class="field-label">Departure</div>
+          <div class="field-value">07 Jun</div>
+          <div class="field-sub">Sunday, 2026</div>
+        </div>
+
+        <!-- TRAVELLERS -->
+        <div class="field-box">
+          <div class="field-label">Travellers & Class</div>
+          <div class="field-value">1</div>
+          <div class="field-sub">Traveller, Economy</div>
+        </div>
+
+        <!-- SEARCH BUTTON -->
+        <button class="search-btn">🔍 Search</button>
+
+      </div><!-- end search-fields -->
+
+      <!-- Special fares -->
+      <div class="special-fares">
+        <strong>Special Fares:</strong>
+        <div class="fare-tag">🎓 Student</div>
+        <div class="fare-tag">👴 Senior Citizen</div>
+        <div class="fare-tag">🪖 Armed Forces</div>
+      </div>
+
+    </div><!-- end search-card -->
+  </div><!-- end hero -->
+
+
+  <!-- PERKS STRIP -->
+  <div class="perks-strip">
+    <div class="perk-item">
+      <span class="perk-icon">🎧</span> 24x7 Customer Support
+    </div>
+    <div class="perk-item">
+      <span class="perk-icon">✅</span> Hassle-Free Bookings
+    </div>
+    <div class="perk-item">
+      <span class="perk-icon">💰</span> Best Flight Offers
+    </div>
+    <div class="perk-item">
+      <span class="perk-icon">↩️</span> Free Cancellation Available
+    </div>
+    <div class="perk-item">
+      <span class="perk-icon">⚡</span> Instant Refunds
+    </div>
+  </div>
+
+
+  <!-- =====================
+       DO MORE WITH IXIGO
+  ===================== -->
+  <div class="section">
+    <div class="section-title">Do More With ixigo</div>
+
+    <div class="quick-links">
+
+      <div class="quick-link">
+        <div class="quick-link-icon">📍</div>
+        <div class="quick-link-label">Flight Tracker</div>
+        <div class="quick-link-tag">PRO</div>
+      </div>
+
+      <div class="quick-link">
+        <div class="quick-link-icon">💳</div>
+        <div class="quick-link-label">Credit Card</div>
+        <div class="quick-link-tag">FREE</div>
+      </div>
+
+      <div class="quick-link">
+        <div class="quick-link-icon">🛂</div>
+        <div class="quick-link-label">Book Visa</div>
+      </div>
+
+      <div class="quick-link">
+        <div class="quick-link-icon">👥</div>
+        <div class="quick-link-label">Group Booking</div>
+      </div>
+
+      <div class="quick-link">
+        <div class="quick-link-icon">🗺️</div>
+        <div class="quick-link-label">Trip Planner</div>
+      </div>
+
+      <div class="quick-link">
+        <div class="quick-link-icon">🔔</div>
+        <div class="quick-link-label">Fare Alerts</div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+
+  <!-- =====================
+       TODAY'S FLIGHT OFFERS
+  ===================== -->
+  <div class="section">
+    <div class="section-title">✨ Today's Flight Offers</div>
+
+    <div class="offers-grid">
+
+      <div class="offer-card">
+        <div class="offer-img blue">✈️</div>
+        <div class="offer-body">
+          <div class="offer-title">IndiGo Super Saver</div>
+          <div class="offer-desc">Flat ₹500 off on domestic flights</div>
+          <div class="offer-code">INDIGO500</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-img green">🌍</div>
+        <div class="offer-body">
+          <div class="offer-title">International Deals</div>
+          <div class="offer-desc">Up to 30% off on intl. routes</div>
+          <div class="offer-code">FLYWORLD</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-img purple">🏷️</div>
+        <div class="offer-body">
+          <div class="offer-title">Weekend Flash Sale</div>
+          <div class="offer-desc">Extra ₹300 off, limited seats</div>
+          <div class="offer-code">WEEKEND300</div>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-img orange">🎒</div>
+        <div class="offer-body">
+          <div class="offer-title">First Booking Offer</div>
+          <div class="offer-desc">Get ₹200 cashback on first flight</div>
+          <div class="offer-code">FIRST200</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+
+  <!-- =====================
+       POPULAR FLIGHT ROUTES
+  ===================== -->
+  <div class="section">
+    <div class="section-title">🗺️ Popular Flight Routes</div>
+
+    <div class="routes-grid">
+
+      <div class="route-group">
+        <div class="route-from">✈️ Mumbai Flights</div>
+        <div class="route-links">
+          <span class="route-link">→ Goa</span>
+          <span class="route-link">→ Delhi</span>
+          <span class="route-link">→ Bangalore</span>
+          <span class="route-link">→ Ahmedabad</span>
+          <span class="route-link">→ Hyderabad</span>
+        </div>
+      </div>
+
+      <div class="route-group">
+        <div class="route-from">✈️ Delhi Flights</div>
+        <div class="route-links">
+          <span class="route-link">→ Mumbai</span>
+          <span class="route-link">→ Goa</span>
+          <span class="route-link">→ Bangalore</span>
+          <span class="route-link">→ Pune</span>
+          <span class="route-link">→ Kolkata</span>
+        </div>
+      </div>
+
+      <div class="route-group">
+        <div class="route-from">✈️ Bangalore Flights</div>
+        <div class="route-links">
+          <span class="route-link">→ Mumbai</span>
+          <span class="route-link">→ Delhi</span>
+          <span class="route-link">→ Hyderabad</span>
+          <span class="route-link">→ Chennai</span>
+          <span class="route-link">→ Kolkata</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+
+  <!-- =====================
+       TRAVEL STORIES
+  ===================== -->
+  <div class="section">
+    <div class="section-title">📰 News & Travel Stories</div>
+
+    <div class="stories-grid">
+
+      <div class="story-card">
+        <div class="story-img sky">✈️</div>
+        <div class="story-body">
+          <div class="story-tag">TRAVEL TIP</div>
+          <div class="story-title">Skip Airport Queues Like a Pro With This Little-Known Hack</div>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-img green">🏔️</div>
+        <div class="story-body">
+          <div class="story-tag">DESTINATIONS</div>
+          <div class="story-title">Top 15 Best Places to Visit in India This Summer</div>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-img golden">🌅</div>
+        <div class="story-body">
+          <div class="story-tag">GUIDE</div>
+          <div class="story-title">Green Getaways: How Odisha's Eco Retreats Redefine Travel</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =====================
+       APP DOWNLOAD BANNER
+  ===================== -->
+  <div class="app-banner">
+
+    <div class="app-banner-left">
+      <h2>📱 Download the ixigo App</h2>
+      <p>Get up to 25% Off on App bookings. Auto Web Check-in, Flight Tracker & more!</p>
+      <div class="app-buttons">
+        <div class="app-btn">▶ Google Play</div>
+        <div class="app-btn">🍎 App Store</div>
+      </div>
+    </div>
+
+    <div class="app-rating">
+      <div>
+        <div style="font-size:14px; color:rgba(255,255,255,0.8);">Rated</div>
+        <div>4.8 <span class="stars">★★★★★</span></div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.7);">10M+ Reviews</div>
+      </div>
+    </div>
+
+    <div class="app-phone">📱</div>
+
+  </div>
+
+
+  <!-- =====================
+       FOOTER
+  ===================== -->
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-logo">ixigo</div>
+        <p class="footer-desc">
+          India's best travel website for booking flights, trains, hotels and buses.
+          Helping travellers make smarter decisions with AI since 2007.
+        </p>
+        <div class="social-icons">
+          <div class="social-icon">f</div>
+          <div class="social-icon">𝕏</div>
+          <div class="social-icon">in</div>
+          <div class="social-icon">▶</div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Careers</li>
+          <li>Press</li>
+          <li>Blog</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Travel</h4>
+        <ul>
+          <li>Flights</li>
+          <li>Hotels</li>
+          <li>Trains</li>
+          <li>Buses</li>
+          <li>Cabs</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li>Help Center</li>
+          <li>Cancellation Policy</li>
+          <li>Privacy Policy</li>
+          <li>Terms of Use</li>
+          <li>Sitemap</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Le Travenues Technology Limited (ixigo). All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>>
