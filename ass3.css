@@ -1,0 +1,55 @@
+/* .container{
+
+    background-color: black;
+    height: 270px;
+    width: 100px;
+    margin-left: 80px;
+    border: 2px solid red;
+}
+.f{
+    background-color: white;
+    height: 60px;
+    width: 10px;
+    margin-left: 45px;
+    display: ;
+    
+}
+.s{
+    background-color: white;
+    height: 60px;
+    width: 10px;
+    margin-left: 45px;
+    margin-top: 10px;
+    
+}
+.t{
+    background-color: white;
+    height: 60px;
+    width: 10px;
+    margin-left: 45px;
+    margin-top: 10px;
+    
+}
+.fo{
+    background-color: white;
+    height: 60px;
+    width: 10px;
+    margin-left: 45px;
+    margin-top: 10px;
+    
+} */
+
+
+.con{
+    background-color: black;
+    height: 130px;
+    width: 100vw;
+    display: inline-block;
+}
+.box{
+    background-color: white;
+    height: 60px;
+    width: 70px;
+    margin-left: 45px;
+    display: inline-block;
+}
