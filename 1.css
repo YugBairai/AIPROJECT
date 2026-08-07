@@ -1,0 +1,147 @@
+.main{
+
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+
+.nav{
+
+    display: flex;
+    height: 100px;
+    background-color: whitesmoke;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid white;
+
+}
+
+.logo{
+
+    height: 80px;
+    width: 80px;
+    border-radius: 50px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+
+.but{
+
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 20px;
+    justify-content: center;
+   
+    
+}
+
+.searchBar{
+
+    height: 50px;
+    width: 30%;
+    background-color: white;
+    border-radius: 50px;
+    border: 2px solid black;
+
+}
+
+.profile{
+
+    display: flex;
+    background-color: white;
+   
+}
+
+.login{
+
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50px;
+    border: 2px solid black;
+}
+
+.body{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.box1{
+
+    display: flex;
+    height: 150px;
+    width: 100%;
+    background-color: aqua;
+    margin-top: 20px;
+    border: 2px solid black;
+    margin: 40px;
+
+}
+
+.box2{
+
+    height: 400px;
+    width: 100%;
+    background-color: white;
+    background-image: url(box2.png);
+    background-size: cover;
+
+}
+
+.box3{
+ 
+     display: flex;
+    height: 150px;
+    width: 100%;
+    background-color: aqua;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-image: url(box34.png);
+    background-size: cover;
+}
+
+.box4{
+
+    display: flex;
+    height: 150px;
+    width: 100%;
+    background-color: aqua;
+    border-radius: 20px;
+    margin-top: 5px;
+    background-image: url(box34.png);
+    background-size: cover;
+}
+
+.box5{
+
+     display: flex;
+    height: 150px;
+    width: 100%;
+    background-color: aqua;
+    margin-top: 20px;
+    background-image: url(box5.png);
+    background-size: cover;
+}
+
+.box6{
+
+    display: flex;
+    height: 300px;
+    width: 100%;
+    background-color: aqua;
+    margin-top: 20px;
+}
+
+
+.box{
+     display: flex;
+    height: 80%;
+    width: 20%;
+    background-color: pink;
+    margin: 20px;
+    background-image: url(box6.png);
+}

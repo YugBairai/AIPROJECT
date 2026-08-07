@@ -1,0 +1,190 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background-color:#ffffff;
+}
+
+/* Header */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    flex-wrap:wrap;
+    gap:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    border-radius: 50PX;
+    background-image: url(box5.png);
+    background-size: cover;
+}
+
+.navbar{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:black;
+    font-weight:600;
+}
+
+.search-box{
+    flex:1;
+    min-width:200px;
+}
+
+.search-box input{
+    width:100%;
+    padding:10px;
+}
+
+.header-icons{
+    display:flex;
+    gap:15px;
+    font-size:14px;
+}
+
+/* Offer Banner */
+
+.offer-banner{
+    background-color:#ffe4e8;
+    text-align:center;
+    padding:20px;
+    margin-top:10px;
+}
+
+/* Hero Section */
+
+.hero-banner{
+    padding:20px;
+}
+
+.hero-image{
+    height:350px;
+    border:2px dashed gray;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    background-image: url(box2.png);
+    background-size: cover;
+}
+
+/* Common Heading */
+
+h2{
+    text-align:center;
+    margin:30px 0;
+    letter-spacing:2px;
+}
+
+/* Brand Section */
+
+.brand-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
+
+.brand-card{
+    width:180px;
+    height:220px;
+    border:1px solid gray;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-image: url(box34.png);
+    background-size: cover;
+}
+
+/* Save Bigger */
+
+.save-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
+
+.save-card{
+    width:250px;
+    height:200px;
+    border:1px solid gray;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-image: url(box2.png);
+    background-size: cover;
+}
+
+/* Category */
+
+.category-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+    
+}
+
+.category-card{
+    width:180px;
+    height:220px;
+    border:1px solid gray;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-image: url(box5.png);
+    background-size: cover;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .header{
+        flex-direction:column;
+    }
+
+    .navbar{
+        justify-content:center;
+    }
+
+    .header-icons{
+        justify-content:center;
+    }
+
+    .hero-image{
+        height:250px;
+    }
+
+    .brand-card,
+    .category-card{
+        width:140px;
+        height:180px;
+    }
+
+    .save-card{
+        width:90%;
+    }
+}
