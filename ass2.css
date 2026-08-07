@@ -1,0 +1,213 @@
+/* .container{
+    background-color: rgba(175, 25, 125, 0.466);
+    height: 500px;
+    border-radius: 2%;
+    width: 600px;
+}
+.profile{
+    background-color: rgb(13, 244, 24);
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: inline-block;
+
+}
+.skills{
+    background-color: rgb(157, 18, 18);
+    height: 320px;
+    width: 580px;
+    border-radius: 2%;
+    margin-left: 10px;
+    margin-right: 20px;
+    display: inline-block;
+    margin-top: 10px;
+}
+.summ{
+    background-color: rgb(204, 121, 25);
+    height: 150px;
+    width: 405px;
+    border-radius: 2%;
+    margin-left: 20px;
+    display: inline-block;
+    margin-right: 0px;
+    
+}
+.box{
+    background-color: rgb(8, 175, 97);
+    height: 280px;
+    width: 240px;
+    border-radius: 2%;
+    margin: 20px;
+    display: inline-block;
+} */
+
+/* ---------------------------------------------------------------------------------- */
+
+
+/* .container{
+    background-color: rgba(20, 135, 16, 0.466);
+    height: 541px;
+    border-radius: 2%;
+    width:685px;
+}
+
+.rec{
+    background-color: rgb(66, 168, 168);
+    height: 150px;
+    width: 665px;
+    border-radius: 2%;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: inline-block;
+
+}
+
+.sq1{
+    background-color: rgb(8, 175, 172);
+    height: 200px;
+    width: 310px;
+    border-radius: 2%;
+    margin-left: 10px;
+    margin-right: 20px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.sq2{
+    background-color: rgb(8, 175, 172);
+    height: 200px;
+    width: 310px;
+    border-radius: 2%;
+    margin-left: 20px;
+    display: inline-block;
+    margin-right: 0px;
+    
+}
+
+.sm1{
+    background-color: rgb(8, 175, 172);
+    height: 150px;
+    width: 150px;
+    border-radius: 2%;
+    margin-top: 5px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.c1{
+    background-color: rgb(8, 175, 172);
+    height: 150px;
+    width: 150px;
+    border-radius: 2%;
+    margin-top: 5px;
+    margin-left: 10px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.sm2{
+    background-color: rgb(8, 175, 172);
+    height: 150px;
+    width: 150px;
+    border-radius: 2%;
+    margin-top: 5px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.c2{
+    background-color: rgb(8, 175, 172);
+    height: 150px;
+    width: 150px;
+    border-radius: 2%;
+    margin-top: 5px;
+    margin-left: 20px;
+    display: inline-block;
+    border-radius: 50%;
+} */
+
+/* ----------------------------------------------------------------------------------- */
+
+.parent{
+    background-color: rgba(238, 5, 28, 0.466);
+    height: 500px;
+    border-radius: 2%;
+    width: 569px;
+}
+
+.p{
+    background-color: rgb(188, 228, 11);
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: inline-block;
+
+}
+
+.ps{
+    background-color: rgb(188, 228, 11);
+    height: 150px;
+    width: 375px;
+    border-radius: 2%;
+    margin-left: 10px;
+    margin-right: 20px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.sq1{
+    background-color: rgb(188, 228, 11);
+    height: 150px;
+    width: 150px;
+    border-radius: 2%;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.sq2{
+    background-color: rgb(188, 228, 11);
+    height: 150px;
+    width: 365px;
+    border-radius: 2%;
+    margin-top: 10px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.l1{
+    background-color: rgb(188, 228, 11);
+    height: 150px;
+    width: 150px;
+    border-radius: 2%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.l2{
+    background-color: rgb(188, 228, 11);
+    height: 150px;
+    width: 150px;
+    border-radius: 2%;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.l3{
+    background-color: rgb(188, 228, 11);
+    height: 150px;
+    width: 150px;
+    border-radius: 2%;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: inline-block;
+}
