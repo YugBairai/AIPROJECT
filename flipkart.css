@@ -1,0 +1,248 @@
+.parent{
+    background-color: rgb(245, 247, 249);
+    display: inline-block;
+    width: 750px;
+    height: 750px;
+    border: 2px solid black;
+}
+.top1{
+    background-color: rgb(237, 237, 233);
+    display: inline-block;
+    width: 730px;
+    height: 60px;
+    margin: 10px;
+    
+}
+
+.top2{
+    background-color: rgb(223, 247, 9);
+    display: inline-block;
+    border: 2px solid black;
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+
+.top3{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.nx{
+
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    /* border: 2px solid black; */
+    width: 730px;
+    height: 60px;
+    margin: 10px;
+}
+
+.nx1{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid rgb(43, 8, 218);
+    width: 410px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.nx2{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 70px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.nx3{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 70px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.nx4{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 70px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.bt{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    /* border: 2px solid black; */
+    width: 730px;
+    height: 60px;
+    margin: 10px;
+}
+
+.bt1{
+     background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 75px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.bt2{
+     background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 75px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.bt3{
+     background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 75px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.bt4{
+     background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 75px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.bt5{
+     background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 75px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.bt6{
+     background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 75px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.bt7{
+     background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 75px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.bottom{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    /* border: 2px solid black; */
+    width: 730px;
+    height: 250px;
+    margin: 10px;
+}
+
+.b1{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 210px;
+    height: 225px;
+    margin: 10px;
+    vertical-align: top;
+}
+
+.b2{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 210px;
+    height: 225px;
+    margin: 10px;
+}
+
+.b3{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 210px;
+    height: 225px;
+    margin: 10px;
+}
+
+.bottom1{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    /* border: 2px solid black; */
+    width: 730px;
+    height: 210px;
+    margin: 10px;
+}
+
+.b4{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 150px;
+    height: 180px;
+    margin: 10px;
+}   
+
+.b5{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 150px;
+    height: 180px;
+    margin: 10px;
+}
+
+.b6{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 150px;
+    height: 180px;
+    margin: 10px;
+}
+
+.b7{
+    background-color: rgb(236, 233, 237);
+    display: inline-block;
+    border: 2px solid black;
+    width: 150px;
+    height: 180px;
+    margin: 10px;
+}
