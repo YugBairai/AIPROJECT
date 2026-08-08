@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Grid Layout</title>
+
+  <style>
+    
+
+    body{
+      background:black;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      color:white;
+    }
+
+    .dashboard{
+      width:1000px;
+      display:grid;
+      grid-template-columns: 200px 1fr 1fr 1fr;
+      grid-template-rows: 70px 100px 220px 120px;
+      gap:10px;
+    }
+
+    .box{
+      border-radius:10px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:24px;
+      font-weight:bold;
+      border:2px solid white;
+    }
+
+    .sidebar{
+      grid-row:1 / 5;
+      background:skyblue;
+    }
+
+    
+    .topnav{
+      grid-column:2 / 5;
+      background:green;
+    }
+
+    
+    .users{
+      background:orange;
+    }
+
+    .revenue{
+      background:orange;
+    }
+
+    .orders{
+      background:orange;
+    }
+
+
+    .chart{
+      grid-column:2 / 4;
+      background:red;
+    }
+
+    
+    .table{
+      background:red;
+    }
+
+    
+    .widget{
+      background:pink;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="dashboard">
+
+    <div class="box sidebar">Sidebar</div>
+
+    <div class="box topnav">Top </div>
+
+    <div class="box users">Users</div>
+    <div class="box revenue">Revenue</div>
+    <div class="box orders">Orders</div>
+
+    <div class="box chart">Chart</div>
+
+    <div class="box table">Table</div>
+
+    <div class="box widget">Widget 1</div>
+    <div class="box widget">Widget 2</div>
+    <div class="box widget">Widget 3</div>
+
+  </div>
+
+</body>
+</html>
